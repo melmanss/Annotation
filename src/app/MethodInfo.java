@@ -1,4 +1,11 @@
 package app;
 
-public class MethodInfo {
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+
+@Retention(RetentionPolicy.RUNTIME)
+public @interface MethodInfo {
+    String name();
+    String returnType();
+    String description();
 }
