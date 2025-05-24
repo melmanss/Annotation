@@ -13,13 +13,13 @@ public class AnnotationDemo {
             if (method.isAnnotationPresent(MethodInfo.class)) {
                 MethodInfo methodInfo = method.getAnnotation(MethodInfo.class);
                 Author author = method.getAnnotation(Author.class);
+                Version version = method.getAnnotation(Version.class);
 
-                assert methodInfo != null;
                 System.out.println("Метод: " + methodInfo.name());
                 System.out.println("Тип повернення: " + methodInfo.returnType());
                 System.out.println("Опис: " + methodInfo.description());
-                assert author != null;
                 System.out.println("Автор: " + author.name() + " " + author.surname());
+                System.out.println("Версія: " + (version != null ? version.value() : "N/A"));
                 System.out.println();
             }
         }
